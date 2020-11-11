@@ -5,6 +5,7 @@ A shell script to automate the use of recon-ng v5.
 
 How to use:
 Run as bash: ./recon.sh Domain.com company
+
 replacing domain.com with the desired domain and company with the desired company.
 
 Output:
