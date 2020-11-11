@@ -4,9 +4,7 @@ Recon-ng automation script
 A shell script to automate the use of recon-ng v5.
 
 How to use:
-Run as bash: ./recon.sh Domain.com company
-
-replacing domain.com with the desired domain and company with the desired company.
+Run as bash: "./recon.sh Domain.com company" replacing domain.com with the desired domain and company with the desired company.
 
 Output:
 Three files will be generated: domain.csv and domain.html in the execution path and $domain$stamp.log in recon-ng path.
