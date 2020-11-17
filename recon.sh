@@ -1126,7 +1126,7 @@ echo "modules load reporting/html" >> $domain$stamp.resource
 
 
 
-echo "options set CREATOR cmarquez" >> $domain$stamp.resource
+echo "options set CREATOR Sam" >> $domain$stamp.resource
 
 
 
