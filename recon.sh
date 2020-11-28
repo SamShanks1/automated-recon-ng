@@ -1,11 +1,4 @@
 #!/bin/bash
-
-
-
-
-
-
-
 domain=$1
 
 
