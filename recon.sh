@@ -12,7 +12,9 @@ echo "spool start $domain$stamp.log" >> $domain$stamp.resource
 echo "Domain:" $domain
 echo "Company:" $company
 echo "workspaces create $domain$stamp"
-echo "workspaces select $domain$stamp" >> $domain$stamp.resource
+echo "workspaces load $domain$stamp" >> $domain$stamp.resource
+echo "workspaces create $domain$stamp" >> $domain$stamp.resource
+echo "workspaces load $domain$stamp" >> $domain$stamp.resource
 echo "modules load recon/domains-hosts/bing_domain_web" >> $domain$stamp.resource
 echo "options set SOURCE $domain" >> $domain$stamp.resource
 echo "run" >> $domain$stamp.resource
@@ -82,14 +84,16 @@ echo "run" >> $domain$stamp.resource
 echo "modules load recon/companies-multi/github_miner" >> $domain$stamp.resource
 echo "options set SOURCE $company" >> $domain$stamp.resource
 echo "run" >> $domain$stamp.resource
-echo "modules load recon/profiles-contacts/github_modules loadrs" >> $domain$stamp.resource
+echo "modules load recon/profiles-contacts/github_modules_users" >> $domain$stamp.resource
+echo "run" >> $domain$stamp.resource
+echo "modules load recon/profiles-contacts/github_modules" >> $domain$stamp.resource
 echo "options set SOURCE $company" >> $domain$stamp.resource
 echo "run" >> $domain$stamp.resource
 echo "modules load recon/profiles-repositories/github_repos" >> $domain$stamp.resource
 echo "run" >> $domain$stamp.resource
-echo "run recon/repositories-profiles/github_commits" >> $domain$stamp.resource
+echo "modules load recon/repositories-profiles/github_commits" >> $domain$stamp.resource
 echo "run" >> $domain$stamp.resource
-echo "run recon/repositories-vulnerabilities/github_dorks" >> $domain$stamp.resource
+echo "modules load recon/repositories-vulnerabilities/github_dorks" >> $domain$stamp.resource
 echo "run" >> $domain$stamp.resource
 echo "modules load recon/companies-multi/whois_miner" >> $domain$stamp.resource
 echo "options set SOURCE $company" >> $domain$stamp.resource
@@ -105,5 +109,6 @@ echo "options set CREATOR Sam" >> $domain$stamp.resource
 echo "options set CUSTOMER $domain" >> $domain$stamp.resource
 echo "options set FILENAME $path/$domain.html" >> $domain$stamp.resource
 echo "run" >> $domain$stamp.resource
+echo "exit" >> $domain$stamp.resource
 cd /usr/share/recon-ng
 ./recon-ng -r $path/$domain$stamp.resource
