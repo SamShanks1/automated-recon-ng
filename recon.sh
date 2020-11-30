@@ -110,5 +110,6 @@ echo "options set CUSTOMER $domain" >> $domain$stamp.resource
 echo "options set FILENAME $path/$domain.html" >> $domain$stamp.resource
 echo "run" >> $domain$stamp.resource
 echo "exit" >> $domain$stamp.resource
-cd /usr/share/recon-ng
+cd $HOME
+cd recon-ng
 ./recon-ng -r $path/$domain$stamp.resource
